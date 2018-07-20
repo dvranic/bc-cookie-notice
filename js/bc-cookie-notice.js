@@ -1,46 +1,65 @@
 (function($){
 
-    // Cookie Consent insert
+
+    // Cookie Consent API insert
     window.addEventListener("load", function(){
-        window.cookieconsent.initialise({
-            "palette": {
-                "popup": {
-                    "background": "#cc2424",
-                    "text": "#dbc0c0"
-                },
-                "button": {
-                    "background": "#2f2cbf",
-                    "text": "#31f5a3"
-                },
-                "highlight": {
-                    "background": "",
-                    "border": "",
-                    "text": ""
-                }
-            },
-            "layout": "basic",
-            // Define layouts
-            "layouts": {
-                "basic": "{{messagelink}}{{compliance}}",
-                "basic-header": "{{header}}{{message}}{{link}}{{compliance}}",
-            },
-            "elements": {
+
+        // AJAX request to get data from Cookie Notice Option page
+        // let bccn_ajax_data;
+        $.post(
+            get_cn_setting_ajax_obj.ajax_url,
+            {
+                _ajax_nonce: get_cn_setting_ajax_obj.nonce,
+                action: 'bccn_get_settings',
 
             },
-            "theme": "block",
-            "position": "bottom",
-            "static": false,
-            "type": "opt-in",
-            "content": {
-                "header": "Cookies used on this website!",
-                "message": "This is message text",
-                // "dismiss": "Dismmis button", for some reason I can't find it in the design
-                "deny": "Deny button",
-                "allow": "Allow Keksi",
-                "link": "Policy link text",
-                "href": "//www.bettercollective.com",
+            function(obj) {
+
+                console.log(obj.bcPolicyLink);
+
+                window.cookieconsent.initialise({
+                    "palette": {
+                        "popup": {
+                            "background": obj.bcPopupBackground,
+                            "text": obj.bcPopupText
+                        },
+                        "button": {
+                            "background": obj.bcButtonBackground,
+                            "text": obj.bcButtonText
+                        },
+                        "highlight": {
+                            "background": "",
+                            "border": "",
+                            "text": ""
+                        }
+                    },
+                    "layout": "basic",
+                    // Define layouts
+                    "layouts": {
+                        "basic": "{{messagelink}}{{compliance}}",
+                        "basic-header": "{{header}}{{message}}{{link}}{{compliance}}",
+                    },
+                    "elements": {
+
+                    },
+                    "theme": obj.bcTheme,
+                    "position": obj.bcPosition,
+                    "static": obj.bcPulldown,
+                    "type": obj.bcTypeOption,
+                    "content": {
+                        "header": obj.bcHeaderText,
+                        "message": obj.bcMessageText,
+                        "dismiss": obj.bcDismissBtnText,
+                        "deny": obj.bcDenyBtnText,
+                        "allow": obj.bcAllowBtnText,
+                        "link": obj.bcPolicyLinkText,
+                        "href": obj.bcPolicyLink,
+                    }
+                });
+
             }
-        })
+        );
+
     });
 
 })(jQuery);

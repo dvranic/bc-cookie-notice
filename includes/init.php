@@ -33,12 +33,17 @@ function bccn_style_scripts() {
     // plugin's script
     wp_register_script('bccn-script', BCCN_URL.'js/bc-cookie-notice.js', array('jquery'), false, true);
     wp_enqueue_script('bccn-script');
+    $bccn_request = wp_create_nonce('get_cn_settings');
+    wp_localize_script('bccn-script', 'get_cn_setting_ajax_obj', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce' => $bccn_request,
+    ));
 
 }
 add_action('wp_enqueue_scripts', 'bccn_style_scripts');
 
 
-// Add Cookie Notice page
+// Add Cookie Notice Option page in backend
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page(array(
         'page_title' 	=> 'BC Cookie Notice Settings',
@@ -48,3 +53,6 @@ if (function_exists('acf_add_options_page')) {
         'redirect' 	    => false
     ));
 }
+
+// Include files
+include(BCCN_PATH.'includes/json.php');

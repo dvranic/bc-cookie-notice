@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
+            "open": 1,
             "multi_expand": 0,
             "endpoint": 0
         },
@@ -32,7 +32,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "#000"
         },
         {
             "key": "field_5b4f4520f7cfc",
@@ -47,7 +47,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "#fff"
         },
         {
             "key": "field_5b4f4548f7cfd",
@@ -62,7 +62,344 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "#00a767"
+        },
+        {
+            "key": "field_5b4f5a209ecf1",
+            "label": "Button Text Color",
+            "name": "bc_button_text_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#fff"
+        },
+        {
+            "key": "field_5b4f5a419ecf2",
+            "label": "Layout",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5b4f5a589ecf3",
+            "label": "Theme",
+            "name": "bc_theme",
+            "type": "select",
+            "instructions": "Please choose a theme",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "block": "Block",
+                "edgeless": "Without edge",
+                "classic": "Classic"
+            },
+            "default_value": [
+                "block"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5b5035fa5ca7d",
+            "label": "Position",
+            "name": "bc_position",
+            "type": "select",
+            "instructions": "Please choose a position for the notice?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "top": "Top",
+                "bottom": "Bottom",
+                "top-left": "Top Left",
+                "top-right": "Top Right",
+                "bottom-left": "Bottom Left",
+                "bottom-right": "Bottom Right"
+            },
+            "default_value": [
+                "bottom"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5b5037775ca7e",
+            "label": "Pulldown",
+            "name": "bc_pulldown",
+            "type": "true_false",
+            "instructions": "Do you want to pulldown notice from top?",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5b5035fa5ca7d",
+                        "operator": "==",
+                        "value": "top"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5b5037d05ca7f",
+            "label": "Type",
+            "name": "bc_type",
+            "type": "select",
+            "instructions": "Please choose a type of notice: info, opt-in or opt-out?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "info": "Info",
+                "opt-in": "Opt-In",
+                "opt-out": "Opt-Out"
+            },
+            "default_value": [
+                "info"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5b503bd71b4c7",
+            "label": "Content",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5b503be61b4c8",
+            "label": "Notice",
+            "name": "bc_notice",
+            "type": "textarea",
+            "instructions": "Please write cookie notice message",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_5b503c89befd7",
+            "label": "Deny text",
+            "name": "bc_deny_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Deny Cookies",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b503cccbefd8",
+            "label": "Allow text",
+            "name": "bc_allow_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Allow Cookies",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b503cefbefd9",
+            "label": "Dismiss text",
+            "name": "bc_dismiss_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Got it",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b503d3dbefda",
+            "label": "Policy Link text",
+            "name": "bc_policy_link_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Read Policy",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b503d8abefdb",
+            "label": "Link Source",
+            "name": "bc_link_source",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "15",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "internal": "Page",
+                "external": "URL"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5b5040c123717",
+            "label": "Link Page",
+            "name": "bc_link_page",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5b503d8abefdb",
+                        "operator": "==",
+                        "value": "internal"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post",
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
+        },
+        {
+            "key": "field_5b50412923718",
+            "label": "Link URL",
+            "name": "bc_link_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5b503d8abefdb",
+                        "operator": "==",
+                        "value": "external"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "http:\/\/.... or https:\/\/...."
         }
     ],
     "location": [
@@ -76,11 +413,11 @@
     ],
     "menu_order": 0,
     "position": "normal",
-    "style": "default",
+    "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531924866
+    "modified": 1532002071
 }
