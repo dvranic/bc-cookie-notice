@@ -39,6 +39,7 @@ function bccn_style_scripts() {
         'nonce' => $bccn_request,
     ));
 
+
 }
 add_action('wp_enqueue_scripts', 'bccn_style_scripts');
 
